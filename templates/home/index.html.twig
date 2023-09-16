@@ -1,20 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Garage V Parrot{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ asset('source/bootstrap-3.3.6-dist/css/bootstrap.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('source/font-awesome-4.5.0/css/font-awesome.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('style/slider.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('style/mystyle.css') }}">
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/xabar/garageVparrotNEW/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/xabar/garageVparrotNEW/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+            <div class="allcontain">
+                {% include 'header.html.twig' %}
+                {% include 'navbar.html.twig' %}
+            </div>
 {% endblock %}
