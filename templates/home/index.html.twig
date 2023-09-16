@@ -28,4 +28,14 @@
             <div class="allcontain">
                 {% include 'carousel.html.twig' %}
             </div>
+
+{% endblock %}
+{% block main %}
+            <div class="allcontain">
+                {% include 'featured.html.twig' %}
+                {% include 'latest-section.html.twig' %}
+                {% include 'latest-thumbnail.html.twig' %}
+                {% include 'newsletter.html.twig' %}
+                {% include 'footer.html.twig' %}
+            </div>
 {% endblock %}
