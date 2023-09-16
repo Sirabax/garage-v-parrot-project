@@ -9,9 +9,23 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('style/mystyle.css') }}">
 {% endblock %}
 
-{% block body %}
+{% block javascripts %}
+<script type="text/javascript" src="{{ asset('source/bootstrap-3.3.6-dist/js/jquery.js') }}"></script>
+<script type="text/javascript" src="{{ asset('source/js/isotope.js') }}"></script>
+<script type="text/javascript" src="{{ asset('source/js/myscript.js') }}"></script> 
+<script type="text/javascript" src="{{ asset('source/bootstrap-3.3.6-dist/js/jquery.1.11.js') }}"></script>
+<script type="text/javascript" src="{{ asset('source/bootstrap-3.3.6-dist/js/bootstrap.js') }}"></script>
+{% endblock %}
+
+{% block header %}
             <div class="allcontain">
                 {% include 'header.html.twig' %}
                 {% include 'navbar.html.twig' %}
+            </div>
+{% endblock %}
+
+{% block carousel %}
+            <div class="allcontain">
+                {% include 'carousel.html.twig' %}
             </div>
 {% endblock %}
