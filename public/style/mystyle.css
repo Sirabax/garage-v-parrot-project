@@ -334,35 +334,41 @@ float: right;
 /*------------------------- Start Carousel --------------------*/
 
 
-@font-face{
+@font-face {
 	font-family: "OpenSans Semibold";
 	src: url(../source/fonts/OpenSans-Semibold.ttf) format("truetype");
-
 }
-.carousel-caption{
+
+.carousel-caption {
 	z-index: 999;
 }
-.carousel-caption>h2{
+
+.carousel-caption > h2 {
 	text-align: left;
 	font-family: 'OpenSans Semibold';
 	font-size: 25.12pt;
-	text-shadow: 0 0px 0px rgba(0, 0, 0, .0);
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
 
-}
-@font-face{
+@font-face {
 	font-family: "OpenSans Regular";
-	src:url(../source/fonts/OpenSans-Regular.ttf) format("truetype");
+	src: url(../source/fonts/OpenSans-Regular.ttf) format("truetype");
 }
-.carousel-caption>h2>p{
-font-family: :'OpenSans Regular';
-font-size: 15.88pt;
+
+.carousel-caption > p {
+	text-align: left;
+	font-family: 'OpenSans Regular';
+	font-size: 15.88pt;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
+
 .carousel-caption {
-    top: 35%;
-    left:13%;
-    right:auto;
-    bottom: auto;
+	top: 65%;
+	left: 13%;
+	right: auto;
+	bottom: auto;
 }
+
 
 @media screen and (min-width: 320px) and (max-width:767px){
 .carousel-caption>h2{
