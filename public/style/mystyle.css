@@ -43,7 +43,7 @@ Template: GARAGE
 }
 
 .socialicon>li>a:hover {
-	color: #C59E47;
+	color: #145da0;
 
 }
 
@@ -85,7 +85,7 @@ Template: GARAGE
 }
 
 .logreg>li>a:hover {
-	color: #C59E47;
+	color: #145da0;
 }
 
 .logreg .register {
@@ -187,14 +187,14 @@ Template: GARAGE
 #navbarontop>li>a:hover {
 	background-color: none !important;
 	background: none !important;
-	border-bottom: 2px solid #C59E47;
+	border-bottom: 2px solid #145da0;
 }
 
 
 #navbarontop>button {
 	background: none;
 	background-color: none;
-	border: 2px solid #C59E47;
+	border: 2px solid #145da0;
 	font-family: 'BebasNeue Regular';
 	margin-left: 60px;
 	font-size: 16.99px;
@@ -206,7 +206,7 @@ Template: GARAGE
 }
 
 #navbarontop>button:hover {
-	background-color: #C59E47;
+	background-color: #145da0;
 	color: #fff;
 }
 
@@ -231,12 +231,12 @@ Template: GARAGE
 #navbarontop .open>a:hover,
 #navbarontop .open>a:focus {
 	background-color: none !important;
-	border-color: #C59E47;
+	border-color: #145da0;
 }
 
 #navbarontop a:focus {
 	outline: none;
-	border-bottom: 2px solid #C59E47;
+	border-bottom: 2px solid #145da0;
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu>li>a {
@@ -452,7 +452,7 @@ Template: GARAGE
 }
 
 .midle-nav {
-	background: rgba(248, 199, 45, .8);
+	background: #145DA0;
 	border: 0px;
 	position: absolute;
 	bottom: 0px;
@@ -525,7 +525,7 @@ Template: GARAGE
 }
 
 .navbarborder>li>a:hover {
-	color: #F8C72D !important;
+	color: #2E8BC0 !important;
 	background-color: #fff !important;
 
 }
@@ -640,7 +640,7 @@ Template: GARAGE
 @media only screen and (min-width: 768px) and (max-width: 1365px) {
 	.midle-nav {
 		position: relative;
-		background: rgb(248, 199, 45);
+		background: #2E8BC0;
 		top: 0px;
 
 
@@ -753,7 +753,7 @@ Template: GARAGE
 @media screen and (max-width: 767px) {
 	#navbarmidle {
 		padding-left: 20px;
-		background: rgb(248, 199, 45);
+		background: #2E8BC0;
 	}
 
 	.navbarborder>li:last-child {
@@ -798,7 +798,7 @@ Template: GARAGE
 	.midle-nav {
 		position: relative;
 		top: 0px;
-		background: rgba(248, 199, 45, .9)
+		background: #2E8BC0
 	}
 
 	.navbarborder {
@@ -868,7 +868,7 @@ Template: GARAGE
 	font-size: 41px;
 	padding-top: 46px;
 	padding-bottom: 50px;
-	color: #020243;
+	color: #151f27;
 }
 
 .carstxt {
@@ -943,7 +943,7 @@ Template: GARAGE
 .featurecontant {
 	width: 85%;
 	height: auto;
-	border: 1px solid #C59E47;
+	border: 1px solid #145da0;
 	margin-top: 7%;
 
 	margin-right: auto;
@@ -971,7 +971,7 @@ Template: GARAGE
 .featurecontant>h2 {
 	font-family: "OpenSans Regular";
 	font-size: 12.41pt;
-	color: #020243;
+	color: #151f27;
 	text-align: center;
 	letter-spacing: 8px;
 	margin-top: 36%;
@@ -979,8 +979,8 @@ Template: GARAGE
 }
 
 .featurecontant>button {
-	background: #020243;
-	border: 1px solid #020243;
+	background: #151f27;
+	border: 1px solid #151f27;
 	font-family: "OpenSans Regular";
 	font-size: 19px;
 	color: #fff;
@@ -997,9 +997,9 @@ Template: GARAGE
 	-o-transition: all .3s ease-in;
 	-webkit-transition: all .3s ease-in;
 	transition: all .2s ease-in;
-	border: 1px solid #020243;
+	border: 1px solid #151f27;
 	background: none;
-	color: #020243;
+	color: #151f27;
 }
 
 
@@ -1042,10 +1042,10 @@ Template: GARAGE
 
 #readmore>button {
 	background: none;
-	border: 1px solid #020243;
+	border: 1px solid #151f27;
 	font-family: "OpenSans Regular";
 	font-size: 19px;
-	color: #020243;
+	color: #151f27;
 	letter-spacing: 5px;
 	width: 70%;
 	margin-left: 17%;
@@ -1055,7 +1055,7 @@ Template: GARAGE
 }
 
 #readmore>button:hover {
-	background: #020243;
+	background: #151f27;
 	color: #fff;
 	-moz-transition: all .2s ease-in;
 	-o-transition: all .2s ease-in;
@@ -1091,10 +1091,10 @@ Template: GARAGE
 
 #readmore2>button {
 	background: none;
-	border: 1px solid #020243;
+	border: 1px solid #151f27;
 	font-family: "OpenSans Regular";
 	font-size: 19px;
-	color: #020243;
+	color: #151f27;
 	letter-spacing: 5px;
 	width: 68%;
 	margin-left: 17%;
@@ -1104,7 +1104,7 @@ Template: GARAGE
 }
 
 #readmore2>button:hover {
-	background: #020243;
+	background: #151f27;
 	color: #fff;
 	-moz-transition: all .2s ease-in;
 	-o-transition: all .2s ease-in;
@@ -1149,7 +1149,7 @@ Template: GARAGE
 
 @media screen and (max-width: 651px) {
 	.colborder1 {
-		border-top: 0px solid #BABABA;
+		border-top: 0px solid #bababa;
 		border-left: 0px solid #BABABA;
 		border-right: 0px solid #BABABA;
 		border-bottom: 0px;
@@ -1206,7 +1206,7 @@ Template: GARAGE
 	letter-spacing: 10px;
 	padding-top: 66px;
 	padding-bottom: 70px;
-	color: #020243;
+	color: #151f27;
 }
 
 .sortby {
@@ -1257,7 +1257,7 @@ Template: GARAGE
 	background-color: none;
 	border: 0px;
 	font-size: 15pt;
-	color: #F8C72D;
+	color: #2E8BC0;
 }
 
 .latest-navleft>li>button:hover {
@@ -1701,7 +1701,7 @@ Template: GARAGE
 
 .dotlogo {
 	font-size: 12px;
-	color: #C59E47;
+	color: #145da0;
 	padding-right: 78px;
 	padding-left: 78px;
 }
@@ -1762,12 +1762,12 @@ Template: GARAGE
 	padding-left: 50%;
 	margin-left: -64px;
 	font-size: 20px;
-	color: #C59E47;
+	color: #145da0;
 
 }
 
 .bottomsocial>a {
-	color: #C59E47;
+	color: #145da0;
 	padding-right: 20px;
 }
 
@@ -1919,7 +1919,7 @@ Template: GARAGE
 }
 
 .atisda>a {
-	color: #d99735;
+	color: #2E8BC0;
 	border: 0px;
 }
 
@@ -1947,7 +1947,7 @@ Template: GARAGE
 	}
 
 	.footer>a:hover {
-		color: #F97906;
+		color: #2E8BC0;
 	}
 
 	.footer {
