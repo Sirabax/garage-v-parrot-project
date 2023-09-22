@@ -35,7 +35,23 @@
                 {% include 'featured.html.twig' %}
                 {% include 'latest-section.html.twig' %}
                 {% include 'latest-thumbnail.html.twig' %}
+            </div>
+{% endblock %}
+
+{% block newsletter %}
+            <div class="allcontain">
                 {% include 'newsletter.html.twig' %}
+            </div>
+{% endblock %}
+
+{% block contact %}
+            <div class="allcontain">
+                {% include 'contact.html.twig' %}
+            </div>
+{% endblock %}
+
+{% block footer %}
+            <div class="allcontain">
                 {% include 'footer.html.twig' %}
             </div>
 {% endblock %}

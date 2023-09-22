@@ -19,7 +19,7 @@
     left: 0;
 }
 .leftside > img{
-	position: absolute!important;
+	position: absolute;
     max-width: 696px;
 }
 .contact-form{
