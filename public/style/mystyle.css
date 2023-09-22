@@ -1394,7 +1394,8 @@
 }
 
 /*  -----------------     End Latest Cars Images    ------------------------ */
-/* ------------------ Newsletter Section -----------------------------------*/
+
+/* ------------------ Newsletter -----------------------------------*/
 .newslettercontent {
   position: relative;
   width: 100%;
@@ -1606,7 +1607,8 @@
 }
 
 /*-------------------------------------End Newsletter Section ----------------*/
-/*-------------------------------------Contact Section ----------------*/
+
+/*-------------------------------------Contact ----------------*/
 .newslettercontent {
   margin-bottom: 0;
 }
@@ -1676,15 +1678,6 @@
   margin-left: 75%;
 }
 
-.google-maps {
-  padding-left: 50%;
-  padding-top: 7%;
-  margin-bottom: 10%;
-  max-width: 1349px;
-}
-#googleMap {
-  max-width: 90%;
-}
 @media screen and (min-width: 980px) and (max-width: 1279px) {
   .group-coustume {
     top: 90px;
@@ -1716,17 +1709,12 @@
   }
 }
 @media screen and (max-width: 676px) {
+  
   .google-maps {
     padding-left: 0px;
     height: 60%;
   }
-  #googleMap {
-    max-width: 90%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 90%;
-  }
+  
   .contact-form {
     width: 100%;
     margin: 0px;
