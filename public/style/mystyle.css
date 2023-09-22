@@ -582,7 +582,7 @@
     width: 205px;
   }
 
-  .li-minyear {
+  .li-brand {
     width: 156px;
   }
 
@@ -590,6 +590,11 @@
     width: 156px;
   }
 
+  .li-km {
+    width: 156px;
+  }
+
+  
   .li-slideprice {
     margin-left: 36px;
     width: 249px;
@@ -723,11 +728,14 @@
     width: 100%;
   }
 
-  .li-minyear {
+  .li-brand {
     width: 100%;
   }
 
   .li-maxyear {
+    width: 100%;
+  }
+  .li-km {
     width: 100%;
   }
 
@@ -821,13 +829,10 @@
   color: #151f27;
 }
 
-.carstxt {
-  padding-left: 45px;
-  padding-right: 88px;
-}
 
 .bdots {
   padding-right: 40px;
+  padding-left: 40px;
 }
 
 .row {
@@ -844,12 +849,9 @@
 
   .bdots {
     padding-right: 15px;
+    padding-left: 15px;
   }
 
-  .carstxt {
-    padding-left: 20px;
-    padding-right: 15px;
-  }
 }
 
 @media screen and (min-width: 480px) and (max-width: 640px) {
@@ -859,12 +861,10 @@
 
   .bdots {
     padding-right: 20px;
+    padding-left: 20px;
   }
 
-  .carstxt {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+
 }
 
 /* -----------------------Featured Cars--------------------------------------------------------*/
