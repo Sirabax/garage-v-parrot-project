@@ -1134,6 +1134,13 @@
 }
 
 /*  ------------------------------------  *Latest cars *   -----------------------------------   */
+.image-container {
+    width: 338px;
+    height: 389px;
+    overflow: hidden;
+}
+
+
 .carimages {
   max-width: 100%;
 }
