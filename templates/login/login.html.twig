@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
-    <link rel="stylesheet" href="votre-style.css"> <!-- Assurez-vous de lier votre fichier de style CSS ici -->
-</head>
-<body>
-    <div class="header">
-        <!-- Vos éléments de la barre de navigation ici -->
-    </div>
+{% extends 'base.html.twig' %}
 
+{% block title %}Login{% endblock %}
+
+{% block content %}
     <div class="login-form">
         <h2>Connexion</h2>
         <form action="votre-page-de-traitement.php" method="post">
@@ -27,8 +19,4 @@
             </div>
         </form>
     </div>
-
-    <!-- Le reste de votre contenu ici -->
-
-</body>
-</html>
+{% endblock %}

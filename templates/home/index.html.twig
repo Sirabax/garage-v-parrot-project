@@ -2,56 +2,26 @@
 
 {% block title %}Garage V Parrot{% endblock %}
 
-{% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{{ asset('source/bootstrap-3.3.6-dist/css/bootstrap.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('source/font-awesome-4.5.0/css/font-awesome.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('style/slider.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('style/mystyle.css') }}">
-{% endblock %}
-
-{% block javascripts %}
-<script type="text/javascript" src="{{ asset('source/bootstrap-3.3.6-dist/js/jquery.js') }}"></script>
-<script type="text/javascript" src="{{ asset('source/js/isotope.js') }}"></script>
-<script type="text/javascript" src="{{ asset('source/js/myscript.js') }}"></script> 
-<script type="text/javascript" src="{{ asset('source/bootstrap-3.3.6-dist/js/jquery.1.11.js') }}"></script>
-<script type="text/javascript" src="{{ asset('source/bootstrap-3.3.6-dist/js/bootstrap.js') }}"></script>
-{% endblock %}
-
-{% block header %}
-            <div class="allcontain">
-                {% include 'header.html.twig' %}
-                {% include 'navbar.html.twig' %}
-            </div>
-{% endblock %}
-
-{% block carousel %}
-            <div class="allcontain">
-                {% include 'carousel.html.twig' %}
-            </div>
-{% endblock %}
-
-{% block main %}
-            <div class="allcontain">
-                {% include 'featured.html.twig' %}
-                {% include 'latest-section.html.twig' %}
-                {% include 'latest-thumbnail.html.twig' %}
-            </div>
-{% endblock %}
-
-{% block newsletter %}
-            <div class="allcontain">
-                {% include 'newsletter.html.twig' %}
-            </div>
-{% endblock %}
-
-{% block contact %}
-            <div class="allcontain">
-                {% include 'contact.html.twig' %}
-            </div>
-{% endblock %}
-
-{% block footer %}
-            <div class="allcontain">
-                {% include 'footer.html.twig' %}
-            </div>
+{% block content %}
+    <div class="allcontain">
+        {% include 'header.html.twig' %}
+        {% include 'navbar.html.twig' %}
+    </div>
+    <div class="allcontain">
+        {% include 'carousel.html.twig' %}
+    </div>
+    <div class="allcontain">
+        {% include 'featured.html.twig' %}
+        {% include 'latest-section.html.twig' %}
+        {% include 'latest-thumbnail.html.twig' %}
+    </div>
+    <div class="allcontain">
+        {% include 'newsletter.html.twig' %}
+    </div>
+    <div class="allcontain">
+        {% include 'contact.html.twig' %}
+    </div>
+    <div class="allcontain">
+        {% include 'footer.html.twig' %}
+    </div>
 {% endblock %}
