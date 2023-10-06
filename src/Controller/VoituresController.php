@@ -5,9 +5,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
-use App\Entity\UsersAccount;
+use App\Entity\Voitures;
 
-class GarageUserController extends AbstractController
+class VoituresController extends AbstractController
 {
     private $entityManager;
 
@@ -16,14 +16,14 @@ class GarageUserController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    #[Route("/garage-users", name: "garage_users")]
+    #[Route("/voitures", name: "voitures")]
     public function index(): Response
     {
-        $userRepository = $this->entityManager->getRepository(UsersAccount::class);
-        $users = $userRepository->findAll();
+        $voitureRepository = $this->entityManager->getRepository(Voitures::class);
+        $voitures = $voitureRepository->findAll();
 
-        return $this->render('garage_user/garage_user.html.twig', [
-            'users' => $users,
+        return $this->render('voitures/voitures.html.twig', [
+            'voitures' => $voitures,
         ]);
     }
 }

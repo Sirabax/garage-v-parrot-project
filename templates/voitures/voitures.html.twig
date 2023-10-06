@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Database Page</title>
+</head>
+<body>
+    <h1>Database Page</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Marque</th>
+                <th>Modele</th>
+                <th>Kilometrage</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in voitures %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.marque }}</td>
+                    <td>{{ row.modele }}</td>
+                    <td>{{ row.kilometrage }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
