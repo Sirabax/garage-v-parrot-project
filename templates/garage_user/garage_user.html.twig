@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Database Page</title>
+</head>
+<body>
+    <h1>Database Page</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <!-- Add more table headers for other columns -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in users %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.prenom }}</td>
+                    <td>{{ row.nom }}</td>
+                    <td>{{ row.email }}</td>
+                    <!-- Add more table cells for other columns -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
