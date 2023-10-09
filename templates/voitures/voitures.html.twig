@@ -1,29 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Database Page</title>
-</head>
-<body>
-    <h1>Database Page</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Marque</th>
-                <th>Modele</th>
-                <th>Kilometrage</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in voitures %}
-                <tr>
-                    <td>{{ row.id }}</td>
-                    <td>{{ row.marque }}</td>
-                    <td>{{ row.modele }}</td>
-                    <td>{{ row.kilometrage }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</body>
-</html>
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for row in voitures %}
+            <div class="col-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://picsum.photos/200/300" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ row.marque }} - {{ row.modele }}</h5>
+                        <p class="card-text">Prix: {{ row.prix }}</p>
+                        <p class="card-text">Année: {{ row.annee }}</p>
+                        <p class="card-text">Kilometrage: {{ row.kilometrage }}</p>
+                        <p class="card-text">couleur: {{ row.couleur }}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
