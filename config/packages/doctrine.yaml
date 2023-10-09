@@ -1,6 +1,6 @@
 doctrine:
     dbal:
-        url:  'mysql://root:MySQLRoot%21@localhost:3306/garage-v-parrot'
+        url:  'mysql://root:MySQLRoot%21@localhost:3306/garage_v_parrot'
         server_version: '8.0.34'
         driver: 'pdo_mysql'
 
