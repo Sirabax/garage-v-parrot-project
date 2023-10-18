@@ -826,6 +826,14 @@ h5 {
 	color: #ffffff;
 }
 
+#logo {
+    max-height: 100px; /* Ajustez la taille maximale du logo en fonction de vos besoins */
+    margin-left: 100px; /* Ajoutez une marge pour l'espacement */
+    display: inline-block; /* Assurez-vous qu'il s'affiche en ligne avec le texte */
+	margin-right: 2%;
+}
+
+
 .navbar-b {
 	transition: all .5s ease-in-out;
 	padding-top: 12px;
@@ -954,7 +962,7 @@ h5 {
 }
 
 .navbar-b .navbar-brand img {
-	width: 200px;
+	/* width: 200px;
 	/* top: 87px; */
 	/* position: absolute; */
 	/* z-index: 10000; */
