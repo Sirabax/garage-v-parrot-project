@@ -197,16 +197,16 @@
   margin-left: 0px;
 }
 
-.navbar-default .toggle-costume:hover,
-.navbar-default .toggle-costume:focus {
+.navbar-expand-lg .toggle-costume:hover,
+.navbar-expand-lg .toggle-costume:focus {
   background-color: #000;
 }
 
-.navbar-default .toggle-costume.icon-bar {
+.navbar-expand-lg .toggle-costume.icon-bar {
   background-color: #fff;
 }
 
-.navbar-default .toggle-costume:hover .icon-bar {
+.navbar-expand-lg .toggle-costume:hover .icon-bar {
   background-color: #fff;
 }
 
@@ -222,7 +222,7 @@
   border-bottom: 2px solid #145da0;
 }
 
-.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+.navbar-expand-lg .navbar-nav .open .dropdown-menu > li > a {
   font-family: "BebasNeue Regular";
   font-size: 13pt;
   color: #000;
@@ -230,7 +230,7 @@
   text-align: center;
 }
 
-.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+.navbar-expand-lg .navbar-nav .open .dropdown-menu > li > a:hover {
   background-color: #fff;
 }
 
@@ -286,7 +286,7 @@
     margin-left: 50px;
   }
 
-  .navbar-default .navbar-nav .open .dropdowncostume > li > a {
+  .navbar-expand-lg .navbar-nav .open .dropdowncostume > li > a {
     text-align: left;
     margin-left: 40px;
   }
@@ -337,7 +337,7 @@
     margin-bottom: 10px;
   }
 
-  .navbar-default .navbar-nav .open .dropdowncostume > li > a {
+  .navbar-expand-lg .navbar-nav .open .dropdowncostume > li > a {
     text-align: left;
     margin-left: 40px;
   }
@@ -452,28 +452,28 @@
   max-width: 1349px;
 }
 
-.navbar-default .textcostume:hover,
-.navbar-default .textcostume:focus {
+.navbar-expand-lg .textcostume:hover,
+.navbar-expand-lg .textcostume:focus {
   background-color: #fff;
 }
 
-.navbar-default .textcostume:hover .icon-bar {
+.navbar-expand-lg .textcostume:hover .icon-bar {
   background-color: #000;
 }
 
-.navbar-default .textcostume:focus .icon-bar {
+.navbar-expand-lg .textcostume:focus .icon-bar {
   background-color: #000;
 }
 
-.navbar-default .textcostume .icon-bar {
+.navbar-expand-lg .textcostume .icon-bar {
   background-color: #fff;
 }
 
-.navbar-default .textcostume {
+.navbar-expand-lg .textcostume {
   border-color: #fff;
 }
 
-.navbar-default .textcostume {
+.navbar-expand-lg .textcostume {
   border-color: #fff;
 }
 
