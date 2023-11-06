@@ -26,6 +26,9 @@ class Comments
     #[ORM\Column]
     private ?int $moderation = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $created_at = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +78,18 @@ class Comments
     public function setModeration(int $moderation): static
     {
         $this->moderation = $moderation;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(?\DateTimeImmutable $created_at): static
+    {
+        $this->created_at = $created_at;
 
         return $this;
     }

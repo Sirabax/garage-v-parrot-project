@@ -1,40 +1,30 @@
 <?php
-
 namespace App\Controller;
 
-use App\Entity\Comments;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\EntityManagerInterface;
+use App\Entity\Comments;
 
 class CommentsController extends AbstractController
 {
-    // ...
+    private $entityManager;
 
-    #[Route("/add-comment", name: "add_comment", methods: ["POST"])]
-    public function addComment(Request $request): Response
+    public function __construct(EntityManagerInterface $entityManager)
     {
-        // Récupérez les données du formulaire
-        $name = $request->request->get('name');
-        $rating = $request->request->get('rating');
-        $commentText = $request->request->get('comment');
+        $this->entityManager = $entityManager;
+    }
 
-        // Créez une nouvelle instance de l'entité Comments
-        $comment = new Comments();
+    #[Route("/comments", name: "comments")]
+    public function index(): Response
+    {
+        $commentsRepository = $this->entityManager->getRepository(Comments::class);
+        $comments = $commentsRepository->findAll();
 
-        // Assignez les données du formulaire à l'entité
-        $comment->setName($name);
-        $comment->setRating($rating);
-        $comment->setComment($commentText);
-        $comment->setModeration(0); // En attente de validation
-
-        // Enregistrez le commentaire dans la base de données
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->persist($comment);
-        $entityManager->flush();
-
-        // Redirigez l'utilisateur vers la page où les commentaires sont affichés
-        return $this->redirectToRoute('list_comments');
+        return $this->render('comments.html.twig', [
+            'comments' => $comments,
+        ]);
+        
     }
 }
