@@ -1,18 +1,22 @@
 <div class="container">
-    <div class="row">
-    {% for row in comments %}
-        <div class="col-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="https://picsum.photos/400/200" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <span class="marque">{{ row.name }}</span>
-                    </h5>
-                    <p class="card-text">Prix: <span class="prix">{{ row.rating }}</span></p>
-                    <p class="card-text">Année: <span class="annee">{{ row.comment }}</span></p>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
-    </div>
+	<div class="row">
+		{% for row in comments %}
+			<div class="col-4">
+				<div class="card" style="width: 18rem;">
+					<img class="card-img-top" src="https://picsum.photos/400/200" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">
+							<span class="marque">{{ row.name }}</span>
+						</h5>
+						<p class="card-text">Prix:
+							<span class="prix">{{ row.rating }}</span>
+						</p>
+						<p class="card-text">Année:
+							<span class="annee">{{ row.comment }}</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
 </div>
