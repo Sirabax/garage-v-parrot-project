@@ -1,11 +1,11 @@
 <?php
 namespace App\Controller;
 
+use App\Entity\Comments;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Doctrine\ORM\EntityManagerInterface;
-use App\Entity\Comments;
 
 class CommentsController extends AbstractController
 {
@@ -22,9 +22,8 @@ class CommentsController extends AbstractController
         $commentsRepository = $this->entityManager->getRepository(Comments::class);
         $comments = $commentsRepository->findAll();
 
-        return $this->render('comments.html.twig', [
+        return $this->render('comments/comments.html.twig', [
             'comments' => $comments,
         ]);
-        
     }
 }
