@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\CommentsRepository;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CommentsRepository::class)]
@@ -20,14 +19,19 @@ class Comments
     #[ORM\Column]
     private ?int $rating = null;
 
-    #[ORM\Column(type: Types::TEXT)]
+    #[ORM\Column(type: "text")]
     private ?string $comment = null;
 
     #[ORM\Column]
     private ?int $moderation = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?\DateTimeImmutable $created_at = null;
+    #[ORM\Column(type: "datetime")]
+    private \DateTime $created;
+
+    public function __construct()
+    {
+        $this->created = new \DateTime();
+    }
 
     public function getId(): ?int
     {
@@ -82,15 +86,8 @@ class Comments
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreated(): \DateTime
     {
-        return $this->created_at;
-    }
-
-    public function setCreatedAt(?\DateTimeImmutable $created_at): static
-    {
-        $this->created_at = $created_at;
-
-        return $this;
+        return $this->created;
     }
 }
