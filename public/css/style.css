@@ -311,6 +311,10 @@
     border-color: var(--primary);
 }
 
+.review-feedback {
+    padding-top: 100px; 
+}
+
 
 /*** Footer ***/
 .footer {
