@@ -1,18 +1,60 @@
-<div class="container">
-    <div class="row">
-    {% for row in comments %}
-        <div class="col-4">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="https://picsum.photos/400/200" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <span class="marque">{{ row.name }}</span>
-                    </h5>
-                    <p class="card-text">Prix: <span class="prix">{{ row.rating }}</span></p>
-                    <p class="card-text">Année: <span class="annee">{{ row.comment }}</span></p>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
-    </div>
-</div>
+{% extends 'base.html.twig' %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col"></div>
+			<div class="col-3">
+				<input type="text" id="searchMarqueInput" placeholder="Marque...">
+			</div>
+			<div class="col-3">
+				<input type="text" id="searchModeleInput" placeholder="Modele...">
+			</div>
+			<div class="col"></div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-2">
+				<input type="text" id="searchPrixMinInput" placeholder="Prix Min...">
+			</div>
+			<div class="col-2">
+				<input type="text" id="searchAnneeInput" placeholder="Année Fabrication Min...">
+			</div>
+			<div class="col-2">
+				<input type="text" id="searchKmInput" placeholder="Km Max...">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-2">
+				<input type="text" id="searchPrixMaxInput" placeholder="Prix Max...">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col"></div>
+			<div class="col-2">
+				<button id="clearFiltersButton" class="btn btn-primary">Clear Filters</button>
+			</div>
+			<div class="col"></div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			{% for row in comments %}
+				<div class="col-4 comment_card">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">{{ row.name }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ row.rating }}</h6>
+							<p class="card-text">{{ row.comment }}</p>
+						</div>
+						<div class="card-footer">
+							<small class="text-muted">{{ row.created|date('Y-m-d H:i:s') }}</small>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}
