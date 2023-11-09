@@ -15,7 +15,10 @@
 .voitures_card .card .card-body .card-text .annee,
 .voitures_card .card .card-body .card-text .km,
 .voitures_card .card .card-body .card-text .couleur {
-    color: blue;
+    color: #145DA0;
     font-weight: bold;
 }
 
+.voitures_card .card-footer .prix {
+    color: #145DA0 !important;
+}

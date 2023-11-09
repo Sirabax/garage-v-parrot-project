@@ -50,16 +50,13 @@
 			{% for row in voitures %}
 				<div class="col-4 voitures_card">
 					<div class="card">
-                    <img class="card-img-top" src="{{ asset('assets/images/' ~ row.image) }}" alt={{ row.image }}>
+						<img class="card-img-top" src="{{ asset('assets/images/' ~ row.image) }}" alt={{ row.image }}>
 						<div class="card-body">
 							<h5 class="card-title">
 								<span class="marque">{{ row.marque }}</span>
 								-
 								<span class="modele">{{ row.modele }}</span>
 							</h5>
-							<p class="card-text">Prix:
-								<span class="prix">{{ row.prix }}</span>
-							</p>
 							<p class="card-text">Année:
 								<span class="annee">{{ row.annee }}</span>
 							</p>
@@ -67,9 +64,13 @@
 								<span class="km">{{ row.kilometrage }}</span>
 							</p>
 							<p class="card-text">Couleur:
-                                <span class="couleur">{{ row.couleur }}</span>
-                            </p>
-
+								<span class="couleur">{{ row.couleur }}</span>
+							</p>
+						</div>
+						<div class="card-footer text-center">
+							<small class="">
+								<h3 class="prix">{{ row.prix }} €</h3>
+							</small>
 						</div>
 					</div>
 				</div>
