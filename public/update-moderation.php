@@ -4,10 +4,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Connect to your MySQL database using MySQLi
-$servername = "localhost"; // Replace with your MySQL server address
-$username = "root"; // Replace with your MySQL username
-$password = "MySQLRoot!"; // Replace with your MySQL password
-$dbname = "garage_v_parrot"; // Replace with your database name
+$servername = "localhost";
+$username = "root";
+$password = "MySQLRoot!";
+$dbname = "garage_v_parrot";
 
 // Create a connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -34,15 +34,8 @@ if (!$stmt) {
 $stmt->bind_param("ii", $isChecked, $itemId);
 
 // Check if binding parameters was successful
-if (!$stmt) {
-    die("Error binding parameters: " . $conn->error);
-}
-
-// Execute the prepared statement
-if ($stmt->execute()) {
-    echo "Moderation status updated successfully.";
-} else {
-    echo "Error updating moderation status: " . $stmt->error;
+if (!$stmt->execute()) {
+    die("Error updating moderation status: " . $stmt->error);
 }
 
 // Close the statement
@@ -50,3 +43,6 @@ $stmt->close();
 
 // Close the connection
 $conn->close();
+
+echo "Moderation status updated successfully.";
+?>
