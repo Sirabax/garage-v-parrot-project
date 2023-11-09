@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: localhost    Database: garage-v-parrot
+-- Host: localhost    Database: garage_v_parrot
 -- ------------------------------------------------------
 -- Server version	8.0.34
 
@@ -16,6 +16,42 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Current Database: `garage_v_parrot`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `garage_v_parrot` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+USE `garage_v_parrot`;
+
+--
+-- Table structure for table `comments`
+--
+
+DROP TABLE IF EXISTS `comments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `comments` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `rating` int DEFAULT NULL,
+  `comment` text,
+  `moderation` int DEFAULT NULL,
+  `created` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comments`
+--
+
+LOCK TABLES `comments` WRITE;
+/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+INSERT INTO `comments` VALUES (1,'User1',4,'This is the first comment.',0,'2023-11-08 12:27:38'),(2,'User2',5,'This is the second comment.',1,'2023-11-08 12:27:38'),(3,'User3',3,'This is the third comment.',0,'2023-11-08 12:27:38'),(4,'User4',5,'This is the fourth comment.',1,'2023-11-08 12:27:38');
+/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `doctrine_migration_versions`
 --
 
@@ -23,7 +59,7 @@ DROP TABLE IF EXISTS `doctrine_migration_versions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `doctrine_migration_versions` (
-  `version` varchar(191) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `version` varchar(191) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `executed_at` datetime DEFAULT NULL,
   `execution_time` int DEFAULT NULL,
   PRIMARY KEY (`version`)
@@ -94,7 +130,7 @@ CREATE TABLE `voitures` (
 
 LOCK TABLES `voitures` WRITE;
 /*!40000 ALTER TABLE `voitures` DISABLE KEYS */;
-INSERT INTO `voitures` VALUES (1,'Toyota','Camry',15000.00,2018,45000,'bleu','camry.jpg'),(2,'Honda','Civic',12000.00,2017,35000,'rouge','civic.jpg'),(3,'Ford','Focus',11000.00,2019,30000,'gris','focus.jpg'),(4,'Chevrolet','Malibu',13000.00,2018,40000,'noir','malibu.jpg'),(5,'Nissan','Altima',14000.00,2019,35000,'blanc','altima.jpg'),(6,'Volkswagen','Jetta',12500.00,2017,38000,'argent','jetta.jpg'),(7,'Hyundai','Elantra',11500.00,2018,42000,'vert','elantra.jpg'),(8,'Kia','Optima',13500.00,2019,32000,'bleu foncé','optima.jpg'),(9,'Mazda','Mazda3',12750.00,2017,39000,'rouge foncé','mazda3.jpg'),(10,'Subaru','Impreza',11000.00,2018,46000,'bleu clair','impreza.jpg');
+INSERT INTO `voitures` VALUES (1,'Toyota','Camry',15000.00,2018,45000,'Noir','camry.jpg'),(2,'Honda','Civic',12000.00,2017,35000,'Rouge','civic.jpg'),(3,'Ford','Focus',11000.00,2019,30000,'Gris','focus.jpg'),(4,'Chevrolet','Malibu',13000.00,2018,40000,'Noir','malibu.jpg'),(5,'Nissan','Altima',14000.00,2019,35000,'Blanc','altima.jpg'),(6,'Volkswagen','Jetta',12500.00,2017,38000,'Gris Métalisé','jetta.jpg'),(7,'Hyundai','Elantra',11500.00,2018,42000,'Vert','elantra.jpg'),(8,'Kia','Optima',13500.00,2019,32000,'Bleu Foncé','optima.jpg'),(9,'Mazda','Mazda3',12750.00,2017,39000,'Rouge Foncé','mazda3.jpg'),(10,'Subaru','Impreza',11000.00,2018,46000,'Bleu Clair','impreza.jpg');
 /*!40000 ALTER TABLE `voitures` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -107,4 +143,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-09 13:14:58
+-- Dump completed on 2023-11-09 13:24:20
