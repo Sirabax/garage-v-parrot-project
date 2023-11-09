@@ -1,0 +1,21 @@
+.filters-container {
+    margin-top: 150px;
+}
+
+.voitures_card {
+    margin-bottom: 20px;
+}
+
+.card {
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.voitures_card .card .card-body .card-text .prix,
+.voitures_card .card .card-body .card-text .annee,
+.voitures_card .card .card-body .card-text .km,
+.voitures_card .card .card-body .card-text .couleur {
+    color: blue;
+    font-weight: bold;
+}
+

@@ -11,22 +11,26 @@
 			<div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link js-scroll active" href="#slider-home">Accueil</a>
+						<a class="nav-link js-scroll active" href="{{ path('app_home') }}#slider-home">Accueil</a>
+
 					</li>
 					<li class="nav-item">
 						<a class="nav-link1 js-scroll px-5 btn btn-primary" href="{{ asset('/voitures') }}">Nos Voitures d'Occasion</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll" href="#services">Services</a>
+						<a class="nav-link js-scroll" href="{{ path('app_home') }}#services">Services</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll" href="#review">Témoignages</a>
+						<a class="nav-link js-scroll" href="{{ path('app_home') }}#review">Témoignages</a>
+
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll" href="#blog">Actualités</a>
+						<a class="nav-link js-scroll" href="{{ path('app_home') }}#blog">Actualités</a>
+
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll" href="#contact">Contact</a>
+						<a class="nav-link js-scroll" href="{{ path('app_home') }}#contact">Contact</a>
+
 					</li>
 				</ul>
 			</div>

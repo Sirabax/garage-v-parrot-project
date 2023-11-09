@@ -1,187 +1,182 @@
 {% extends 'base.html.twig' %}
 
-{% block contentcss %}<link href="{{ asset('assets/stylesheets/voiturestyle.css') }}" rel="stylesheet" />{% endblock %}
+{% block contentcss %}
+	<link href="{{ asset('assets/stylesheets/voiturestyle.css') }}" rel="stylesheet"/>
+{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col"></div>
-        <div class="col-3">
-            <input type="text" id="searchMarqueInput" placeholder="Marque...">
-        </div>
-        <div class="col-3">
-            <input type="text" id="searchModeleInput" placeholder="Modele...">
-        </div>
-        <div class="col"></div>
-    </div>
-    <div class="row">
-        <div class="col-3"></div>
-        <div class="col-2">
-            <input type="text" id="searchPrixMinInput" placeholder="Prix Min...">
-        </div>
-        <div class="col-2">
-            <input type="text" id="searchAnneeInput" placeholder="Année Fabrication Min...">
-        </div>
-        <div class="col-2">
-            <input type="text" id="searchKmInput" placeholder="Km Max...">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-3"></div>
-        <div class="col-2">
-            <input type="text" id="searchPrixMaxInput" placeholder="Prix Max...">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col"></div>
-        <div class="col-2">
-            <button id="clearFiltersButton" class="btn btn-primary">Clear Filters</button>
-        </div>
-        <div class="col"></div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-    {% for row in voitures %}
-        <div class="col-4 voitures_card">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="https://picsum.photos/400/200" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <span class="marque">{{ row.marque }}</span> - <span class="modele">{{ row.modele }}</span>
-                    </h5>
-                    <p class="card-text">Prix: <span class="prix">{{ row.prix }}</span></p>
-                    <p class="card-text">Année: <span class="annee">{{ row.annee }}</span></p>
-                    <p class="card-text">kilometrage: <span class="km">{{ row.kilometrage }}</span></p>
-                    <p class="card-text">Couleur: {{ row.couleur }}</p>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
-    </div>
-</div>
+	{% include 'navbar.html.twig' %}
 
-<script>
-    // Select filter input elements
-    const searchMarqueInput = document.getElementById('searchMarqueInput');
-    const searchModeleInput = document.getElementById('searchModeleInput');
-    const searchPrixMinInput = document.getElementById('searchPrixMinInput');
-    const searchPrixMaxInput = document.getElementById('searchPrixMaxInput');
-    const searchAnneeInput = document.getElementById('searchAnneeInput');
-    const searchKmInput = document.getElementById('searchKmInput');
+	<div class="container filters-container">
+		<div class="row">
+			<div class="col"></div>
+			<div class="col-3">
+				<input type="text" id="searchMarqueInput" placeholder="Marque...">
+			</div>
+			<div class="col-3">
+				<input type="text" id="searchModeleInput" placeholder="Modele...">
+			</div>
+			<div class="col"></div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-2">
+				<input type="text" id="searchPrixMinInput" placeholder="Prix Min...">
+			</div>
+			<div class="col-2">
+				<input type="text" id="searchAnneeInput" placeholder="Année Fabrication Min...">
+			</div>
+			<div class="col-2">
+				<input type="text" id="searchKmInput" placeholder="Km Max...">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-2">
+				<input type="text" id="searchPrixMaxInput" placeholder="Prix Max...">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col"></div>
+			<div class="col-2">
+				<button id="clearFiltersButton" class="btn btn-primary">Clear Filters</button>
+			</div>
+			<div class="col"></div>
+		</div>
+	</div>
 
-    // Select card elements
-    const cards = document.querySelectorAll('.col-4.voitures_card');
+	<div class="container">
+		<div class="row">
+			{% for row in voitures %}
+				<div class="col-4 voitures_card">
+					<div class="card">
+                    <img class="card-img-top" src="{{ asset('assets/images/' ~ row.image) }}" alt={{ row.image }}>
+						<div class="card-body">
+							<h5 class="card-title">
+								<span class="marque">{{ row.marque }}</span>
+								-
+								<span class="modele">{{ row.modele }}</span>
+							</h5>
+							<p class="card-text">Prix:
+								<span class="prix">{{ row.prix }}</span>
+							</p>
+							<p class="card-text">Année:
+								<span class="annee">{{ row.annee }}</span>
+							</p>
+							<p class="card-text">Kilométrage:
+								<span class="km">{{ row.kilometrage }}</span>
+							</p>
+							<p class="card-text">Couleur:
+                                <span class="couleur">{{ row.couleur }}</span>
+                            </p>
 
-    // Select the "Clear Filters" button
-    const clearFiltersButton = document.getElementById('clearFiltersButton');
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
 
-    // Define an object to store filter criteria
-    const filters = {
-        marque: "",
-        modele: "",
-        prix: { min: "", max: "" },
-        annee: "",
-        km: "",
-    };
+	<script>
+		const searchMarqueInput = document.getElementById('searchMarqueInput');
+const searchModeleInput = document.getElementById('searchModeleInput');
+const searchPrixMinInput = document.getElementById('searchPrixMinInput');
+const searchPrixMaxInput = document.getElementById('searchPrixMaxInput');
+const searchAnneeInput = document.getElementById('searchAnneeInput');
+const searchKmInput = document.getElementById('searchKmInput');
+const cards = document.querySelectorAll('.col-4.voitures_card');
+const clearFiltersButton = document.getElementById('clearFiltersButton');
+const filters = {
+marque: "",
+modele: "",
+prix: {
+min: "",
+max: ""
+},
+annee: "",
+km: ""
+};
 
-    // Add event listeners to filter input elements
-    searchMarqueInput.addEventListener('input', filterByMarque);
-    searchModeleInput.addEventListener('input', filterByModele);
-    searchPrixMinInput.addEventListener('input', filterByPrixMin);
-    searchPrixMaxInput.addEventListener('input', filterByPrixMax);
-    searchAnneeInput.addEventListener('input', filterByAnnee);
-    searchKmInput.addEventListener('input', filterByKm);
+searchMarqueInput.addEventListener('input', filterByMarque);
+searchModeleInput.addEventListener('input', filterByModele);
+searchPrixMinInput.addEventListener('input', filterByPrixMin);
+searchPrixMaxInput.addEventListener('input', filterByPrixMax);
+searchAnneeInput.addEventListener('input', filterByAnnee);
+searchKmInput.addEventListener('input', filterByKm);
 
-    // Reset the display of card elements
-    function resetCardDisplay() {
-        cards.forEach(function (card) {
-            card.style.display = 'block';
-        });
-    }
+function resetCardDisplay() {
+cards.forEach(function (card) {
+card.style.display = 'block';
+});
+}
 
-    // Filter functions for individual criteria
-    function filterByMarque() {
-        filters.marque = searchMarqueInput.value.toLowerCase();
-        applyFilters();
-    }
+function filterByMarque() {
+filters.marque = searchMarqueInput.value.toLowerCase();
+applyFilters();
+}
 
-    function filterByModele() {
-        filters.modele = searchModeleInput.value.toLowerCase();
-        applyFilters();
-    }
+function filterByModele() {
+filters.modele = searchModeleInput.value.toLowerCase();
+applyFilters();
+}
 
-    function filterByPrixMin() {
-        filters.prix.min = searchPrixMinInput.value.toLowerCase();
-        applyFilters();
-    }
-    
-    function filterByPrixMax() {
-        filters.prix.max = searchPrixMaxInput.value.toLowerCase();
-        applyFilters();
-    }
+function filterByPrixMin() {
+filters.prix.min = searchPrixMinInput.value.toLowerCase();
+applyFilters();
+}
 
-    function filterByAnnee() {
-        filters.annee = parseInt(searchAnneeInput.value);
-        applyFilters();
-    }
+function filterByPrixMax() {
+filters.prix.max = searchPrixMaxInput.value.toLowerCase();
+applyFilters();
+}
 
-    function filterByKm() {
-        filters.km = parseInt(searchKmInput.value);
-        applyFilters();
-    }
+function filterByAnnee() {
+filters.annee = parseInt(searchAnneeInput.value);
+applyFilters();
+}
 
-    // Apply filter criteria and update card display
-    function applyFilters() {
-        resetCardDisplay();
-        cards.forEach(function (card) {
-            const marqueElement = card.querySelector('.marque');
-            const modeleElement = card.querySelector('.modele');
-            const prixElement = card.querySelector('.prix');
-            const anneeElement = card.querySelector('.annee');
-            const kmElement = card.querySelector('.km');
-            const marque = marqueElement.textContent.toLowerCase();
-            const modele = modeleElement.textContent.toLowerCase();
-            const prix = parseFloat(prixElement.textContent);
-            const minPrice = parseFloat(filters.prix.min);
-            const maxPrice = parseFloat(filters.prix.max);
-            const annee = parseInt(anneeElement.textContent);
-            const km = parseInt(kmElement.textContent);
+function filterByKm() {
+filters.km = parseInt(searchKmInput.value);
+applyFilters();
+}
 
-            if (
-                !marque.includes(filters.marque) ||
-                !modele.includes(filters.modele) ||
-                (minPrice !== "" && prix < minPrice) ||
-                (maxPrice !== "" && prix > maxPrice) ||
-                (filters.annee !== "" && annee < parseInt(filters.annee)) ||
-                (filters.km !== "" && km > parseInt(filters.km))
-            ) {
-                card.style.display = 'none';
-            }
-        });
-    }
+function applyFilters() {
+resetCardDisplay();
+cards.forEach(function (card) {
+const marqueElement = card.querySelector('.marque');
+const modeleElement = card.querySelector('.modele');
+const prixElement = card.querySelector('.prix');
+const anneeElement = card.querySelector('.annee');
+const kmElement = card.querySelector('.km');
+const marque = marqueElement.textContent.toLowerCase();
+const modele = modeleElement.textContent.toLowerCase();
+const prix = parseFloat(prixElement.textContent);
+const minPrice = parseFloat(filters.prix.min);
+const maxPrice = parseFloat(filters.prix.max);
+const annee = parseInt(anneeElement.textContent);
+const km = parseInt(kmElement.textContent);
 
-    // Event listener for the "Clear Filters" button
-    clearFiltersButton.addEventListener('click', function () {
-        // Clear all filter inputs
-        searchMarqueInput.value = '';
-        searchModeleInput.value = '';
-        searchPrixMinInput.value = '';
-        searchPrixMaxInput.value = '';
-        searchAnneeInput.value = '';
-        searchKmInput.value = '';
+if (! marque.includes(filters.marque) || ! modele.includes(filters.modele) || (minPrice !== "" && prix < minPrice) || (maxPrice !== "" && prix > maxPrice) || (filters.annee !== "" && annee < parseInt(filters.annee)) || (filters.km !== "" && km > parseInt(filters.km))) {
+card.style.display = 'none';
+}
+});
+}
 
-        // Reset the filters object
-        filters.marque = '';
-        filters.modele = '';
-        filters.prix.min = '';
-        filters.prix.max = '';
-        filters.annee = '';
-        filters.km = '';
-
-        // Apply the cleared filters (show all cards)
-        applyFilters();
-    });
-</script>
+clearFiltersButton.addEventListener('click', function () {
+searchMarqueInput.value = '';
+searchModeleInput.value = '';
+searchPrixMinInput.value = '';
+searchPrixMaxInput.value = '';
+searchAnneeInput.value = '';
+searchKmInput.value = '';
+filters.marque = '';
+filters.modele = '';
+filters.prix.min = '';
+filters.prix.max = '';
+filters.annee = '';
+filters.km = '';
+applyFilters();
+});
+	</script>
 
 {% endblock %}
