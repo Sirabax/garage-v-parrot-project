@@ -1,7 +1,13 @@
 {% extends 'base.html.twig' %}
+{% block contentcss %}
+	<link href="{{ asset('assets/stylesheets/commentstyle.css') }}" rel="stylesheet"/>
+{% endblock %}
 
 {% block content %}
-<div class="container">
+{% include 'navbar.html.twig' %}
+
+<div class="container filters-container">
+
 	<div class="row">
 		<div class="col"></div>
 		<div class="col-3">
