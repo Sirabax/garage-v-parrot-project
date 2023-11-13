@@ -22,3 +22,71 @@
 .voitures_card .card-footer .prix {
     color: #145DA0 !important;
 }
+
+/* Ajoutez une marge en bas de 10 pixels entre les lignes */
+.row {
+    margin-bottom: 20px;
+}
+
+/* Pour éviter une marge en bas sur la dernière ligne */
+.filters-container .row:last-child {
+    margin-bottom: 0;
+}
+
+/* Ajoutez une classe spécifique à la ligne contenant Marque et Modele */
+.marque-modele {
+    position: relative; /* Permet d'utiliser une position relative pour positionner les éléments enfants */
+}
+
+/* Ajoutez une bande bleue en tant qu'élément enfant de la ligne Marque et Modele */
+.marque-modele::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%; /* Place la bande au milieu de la ligne */
+    height: 25px; /* Épaisseur de la bande */
+
+    background-color: #145DA0; /* Couleur de la bande */
+    z-index: -1; /* Place la bande en dessous des éléments de la ligne */
+}
+
+/* Ajoutez une classe spécifique à la ligne contenant Marque et Modele */
+.annekmbar {
+    position: relative; /* Permet d'utiliser une position relative pour positionner les éléments enfants */
+}
+
+/* Ajoutez une bande bleue en tant qu'élément enfant de la ligne Marque et Modele */
+.annekmbar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%; /* Place la bande au milieu de la ligne */
+    height: 25px; /* Épaisseur de la bande */
+    
+
+    background-color: rgba(20, 92, 158,0.5); /* Couleur de la bande */
+    z-index: -1; /* Place la bande en dessous des éléments de la ligne */
+}
+
+/* Ajoutez une classe spécifique à la ligne contenant Marque et Modele */
+.prixbar {
+    position: relative; /* Permet d'utiliser une position relative pour positionner les éléments enfants */
+}
+
+/* Ajoutez une bande bleue en tant qu'élément enfant de la ligne Marque et Modele */
+.prixbar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%; /* Place la bande au milieu de la ligne */
+    height: 85px; /* Épaisseur de la bande */
+    
+
+    background-color: rgba(20, 92, 158,0.5); /* Couleur de la bande */
+    z-index: -1; /* Place la bande en dessous des éléments de la ligne */
+}
+
+

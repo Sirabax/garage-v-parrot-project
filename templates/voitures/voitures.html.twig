@@ -8,31 +8,30 @@
 	{% include 'navbar.html.twig' %}
 
 	<div class="container filters-container">
-		<div class="row">
-			<div class="col"></div>
+		<div class="row marque-modele">
 			<div class="col-3">
 				<input type="text" id="searchMarqueInput" placeholder="Marque...">
 			</div>
 			<div class="col-3">
-				<input type="text" id="searchModeleInput" placeholder="Modele...">
+				<input type="text" id="searchModeleInput" placeholder="Modèle...">
 			</div>
-			<div class="col"></div>
 		</div>
 		<div class="row">
-			<div class="col-3"></div>
-			<div class="col-2">
+			<div class="col-3 prixbar">
 				<input type="text" id="searchPrixMinInput" placeholder="Prix Min...">
 			</div>
-			<div class="col-2">
+			<div class="col-1"></div>
+			<div class="col-3 annekmbar">
 				<input type="text" id="searchAnneeInput" placeholder="Année Fabrication Min...">
 			</div>
-			<div class="col-2">
+<div class="col-1"></div>
+
+			<div class="col-3 annekmbar">
 				<input type="text" id="searchKmInput" placeholder="Km Max...">
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-3"></div>
-			<div class="col-2">
+			<div class="col-3">
 				<input type="text" id="searchPrixMaxInput" placeholder="Prix Max...">
 			</div>
 		</div>
@@ -44,6 +43,7 @@
 			<div class="col"></div>
 		</div>
 	</div>
+
 
 	<div class="container">
 		<div class="row">
@@ -69,7 +69,8 @@
 						</div>
 						<div class="card-footer text-center">
 							<small class="">
-								<h3 class="prix">{{ row.prix }} €</h3>
+								<h3 class="prix">{{ row.prix }}
+									€</h3>
 							</small>
 						</div>
 					</div>
@@ -78,9 +79,7 @@
 		</div>
 	</div>
 
-{% block contentjs %}
-	<script src="{{ asset('assets/javascript/voitures.js') }}"></script>
-{% endblock %}
-
-
+	{% block contentjs %}
+		<script src="{{ asset('assets/javascript/voitures.js') }}"></script>
+	{% endblock %}
 {% endblock %}
