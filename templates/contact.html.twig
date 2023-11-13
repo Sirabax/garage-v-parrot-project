@@ -1,71 +1,60 @@
 <!-- Section de Contact Début -->
 <section id="contact" class="contact-area section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="section-title">
-                    <h5>Contactez-nous</h5>
-                    <h2>Nous Contacter</h2>
-                </div>
-                <!-- Formulaire de Contact -->
-                <form class="col-lg-6 col-md-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="nom" placeholder="Nom">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="prenom" placeholder="Prénom">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="email" placeholder="E-mail">
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" class="form-control" id="telephone" placeholder="Numéro de téléphone">
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" id="message" rows="5" placeholder="Votre message"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Envoyer</button>
-                </form>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <img src="assets/images/logo2.png" alt="logo V.Parrot" class="img-fluid">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="form-container-box">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-12 mb-30">
-                            <div class="single-cta d-flex">
-                                <i class="fa fa-map-marker pt-3"></i>
-                                <div class="cta-text">
-                                    <h4>Nous Trouver</h4>
-                                    <span>123 Rue Automobile, Radiator Springs, 86434, France</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-12 mb-30">
-                            <div class="single-cta">
-                                <i class="fa fa-phone pt-3"></i>
-                                <div class="cta-text">
-                                    <h4>Appelez-nous</h4>
-                                    <span>01 23 45 67 89</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 mb-30">
-                            <div class="single-cta">
-                                <i class="fa fa-envelope-open pt-3"></i>
-                                <div class="cta-text">
-                                    <h4>Contactez-nous par e-mail</h4>
-                                    <span>info@example.com</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="section-title">
+					<h2>Nous Contacter</h2>
+					<a href="mailto:contact@example.com?subject=Demande%20de%20contact">CONTACTEZ-NOUS PAR E-MAIL
+						<img src="assets/images/mail.png" alt="emailsend" class="img-fluid"></a>
+
+
+				</div>
+
+
+			</div>
+			<div class="col-lg-6 col-md-6">
+				<img src="assets/images/logo2.png" alt="logo V.Parrot" class="img-fluid">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="form-container-box">
+					<div class="row">
+						<div class="col-lg-5 col-md-12 mb-30">
+							<div class="single-cta d-flex">
+								<i class="fa fa-map-marker pt-3"></i>
+								<div class="cta-text">
+									<h4>Nous Trouver</h4>
+									<span>123 Rue Automobile, Radiator Springs, 86434, France</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-12 mb-30">
+							<div class="single-cta">
+								<i class="fa fa-phone pt-3"></i>
+								<div class="cta-text">
+									<h4>Appelez-nous</h4>
+									<span>01 23 45 67 89</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-12 mb-30">
+							<div class="single-cta">
+								<i class="fa fa-envelope-open pt-3"></i>
+								<div class="cta-text">
+									<h4>Contactez-nous par e-mail</h4>
+									<span>info@example.com</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 <!-- Section de Contact Fin -->
+{% block contentjs %}
+	<script src="{{ asset('assets/javascript/contacttomail.js') }}"></script>
+{% endblock %}
