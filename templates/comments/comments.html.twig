@@ -1,43 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-<div class="container">
-	<div class="row">
-		<div class="col"></div>
-		<div class="col-3">
-			<input type="text" id="searchMarqueInput" placeholder="Marque...">
-		</div>
-		<div class="col-3">
-			<input type="text" id="searchModeleInput" placeholder="Modele...">
-		</div>
-		<div class="col"></div>
-	</div>
-	<div class="row">
-		<div class="col-3"></div>
-		<div class="col-2">
-			<input type="text" id="searchPrixMinInput" placeholder="Prix Min...">
-		</div>
-		<div class="col-2">
-			<input type="text" id="searchAnneeInput" placeholder="Année Fabrication Min...">
-		</div>
-		<div class="col-2">
-			<input type="text" id="searchKmInput" placeholder="Km Max...">
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-3"></div>
-		<div class="col-2">
-			<input type="text" id="searchPrixMaxInput" placeholder="Prix Max...">
-		</div>
-	</div>
-	<div class="row">
-		<div class="col"></div>
-		<div class="col-2">
-			<button id="clearFiltersButton" class="btn btn-primary">Clear Filters</button>
-		</div>
-		<div class="col"></div>
-	</div>
-</div>
+
+{{ render(controller('App\\Controller\\CommentFormController::showForm')) }}
+
 <div class="container">
 	<div class="row">
 		{% for row in comments %}
@@ -64,6 +30,11 @@
 	</div>
 </div>
 <script>
+
+// Form Control
+
+
+// Moderation Checkbox control
 document.addEventListener('DOMContentLoaded', function () {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     
