@@ -1,73 +1,10 @@
-{% extends 'base.html.twig' %}
-{% block contentcss %}
-	<link href="{{ asset('assets/stylesheets/commentstyle.css') }}" rel="stylesheet"/>
-{% endblock %}
+{# templates/article/show.html.twig #}
 
-{% block content %}
+{# ... Affichez le contenu de l'article ... #}
 
-{{ render(controller('App\\Controller\\CommentFormController::showForm')) }}
-
-<div class="container">
-	<div class="row">
-		{% for row in comments %}
-			<div class="col-4 comment_card">
-				<div class="card">
-				<div class="checkbox-container" style="position:absolute; top:10px; right:10px">
-                        {% if row.moderation == 1 %}
-                            <input type="checkbox" checked data-item-id="{{ row.id }}">
-                        {% else %}
-                            <input type="checkbox" data-item-id="{{ row.id }}">
-                        {% endif %}
-                    </div>
-					<div class="card-body py-3">
-						<h5 class="card-title">{{ row.name }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{ row.rating }}</h6>
-						<p class="card-text">{{ row.comment }}</p>
-					</div>
-					<div class="card-footer">
-						<small class="text-muted">{{ row.created|date('Y-m-d H:i:s') }}</small>
-					</div>
-				</div>
-			</div>
-		{% endfor %}
-	</div>
-</div>
-<script>
-
-// Form Control
-
-
-// Moderation Checkbox control
-document.addEventListener('DOMContentLoaded', function () {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    
-    checkboxes.forEach(function (checkbox) {
-        checkbox.addEventListener('change', function () {
-            const isChecked = this.checked ? 1 : 0;
-            const itemId = this.getAttribute('data-item-id');
-
-            const formData = new FormData();
-            formData.append('itemId', itemId);
-            formData.append('isChecked', isChecked);
-
-            // Modify the URL to fetch update-moderation.php from the public directory
-            const updateModerationUrl = '/update-moderation.php';
-
-            // Send an AJAX request to update the database
-            fetch(updateModerationUrl, {
-                method: 'POST',
-                body: formData,
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Moderation status updated successfully.');
-                } else {
-                    alert('Failed to update moderation status.');
-                }
-            });
-        });
-    });
-});
-
-</script>
-{% endblock %}
+<h2>Comments</h2>
+<ul>
+    {% for comment in comments %}
+        <li>{{ comment.content }}</li>
+    {% endfor %}
+</ul>

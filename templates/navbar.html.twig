@@ -1,36 +1,33 @@
 <!-- Début de la zone de navigation de l'en-tête -->
 <header id="Thecar-theme-menu" class="Thecar-theme-menu-header-navber-area">
-	<nav class="navbar navbar-b navbar-trans navbar-expand-lg" id="mainNav">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" id="mainNav">
 		<div class="container">
 			<img src="assets/images/logo2.png" alt="Nom de votre garage" id="logo">
 			<a class="navbar-brand js-scroll" href="{{ path('app_home') }}">
-				<span class="white-logo">GARAGE V. PARROT</span>
-				<span class="black-logo">GARAGE V. PARROT</span>
+				<span class="white-logo custom-title">GARAGE V. PARROT</span>
 			</a>
-			<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Basculer la navigation"></button>
-			<div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
-				<ul class="navbar-nav">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Basculer la navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarDefault">
+				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
 						<a class="nav-link js-scroll active" href="{{ path('app_home') }}#slider-home">Accueil</a>
-
 					</li>
 					<li class="nav-item">
-						<a class="nav-link1 js-scroll px-5 btn btn-primary" href="{{ asset('/voitures') }}">Nos Voitures d'Occasion</a>
+						<a class="nav-link js-scroll px-3 btn btn-primary" href="{{ asset('/voitures') }}">Nos Voitures d'Occasion</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll" href="{{ path('app_home') }}#services">Services</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll" href="{{ path('app_home') }}#review">Témoignages</a>
-
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll" href="{{ path('app_home') }}#blog">Actualités</a>
-
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll" href="{{ path('app_home') }}#contact">Contact</a>
-
 					</li>
 				</ul>
 			</div>
