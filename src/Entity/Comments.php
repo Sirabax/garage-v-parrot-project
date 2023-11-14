@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Comments
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
+    #[ORM\GeneratedValue(strategy: "AUTO")]
     #[ORM\Column]
     private ?int $id = null;
 
@@ -25,7 +25,7 @@ class Comments
     #[ORM\Column]
     private ?int $moderation = null;
 
-    #[ORM\Column(type: "datetime")]
+    #[ORM\Column(type: "datetime", name: "created")]
     private \DateTime $created;
 
     public function __construct()
