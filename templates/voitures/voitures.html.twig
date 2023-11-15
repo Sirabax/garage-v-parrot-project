@@ -7,7 +7,46 @@
 {% block content %}
 	{% include 'navbar.html.twig' %}
 
-	<div class="container filters-container">
+<div class="container filters-container">
+    <form id="voiture-form" action="add-voitures.php">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="addmarque">Marque</label>
+                <input type="text" class="form-control" id="addmarque" name="marque" placeholder="Entrer Marque" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="addmodele">Modele</label>
+                <input type="text" class="form-control" id="addmodele" name="modele" placeholder="Entrer Modele" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="addprix">Prix</label>
+                <input type="text" class="form-control" id="addprix" name="prix" placeholder="Entrer Prix" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="addannee">Année</label>
+                <input type="text" class="form-control" id="addannee" name="annee" placeholder="Entrer Année" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="addkilometrage">Kilometrage</label>
+                <input type="text" class="form-control" id="addkilometrage" name="kilometrage" placeholder="Enter Kilometrage" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="addcouleur">Couleur</label>
+                <input type="text" class="form-control" id="addcouleur" name="couleur" placeholder="Enter Couleur" required>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+	<div class="container mt-3">
 		<div class="row marque-modele">
 			<div class="col-3">
 				<input type="text" id="searchMarqueInput" placeholder="Marque...">
@@ -24,7 +63,7 @@
 			<div class="col-3 annekmbar">
 				<input type="text" id="searchAnneeInput" placeholder="Année Fabrication Min...">
 			</div>
-<div class="col-1"></div>
+			<div class="col-1"></div>
 
 			<div class="col-3 annekmbar">
 				<input type="text" id="searchKmInput" placeholder="Km Max...">
@@ -81,5 +120,6 @@
 
 	{% block contentjs %}
 		<script src="{{ asset('assets/javascript/voitures.js') }}"></script>
+		<script src="{{ asset('assets/javascript/voitures-add.js') }}"></script>
 	{% endblock %}
 {% endblock %}
