@@ -117,9 +117,9 @@
 			{% endfor %}
 		</div>
 	</div>
+{% endblock %}
 
-	{% block contentjs %}
-		<script src="{{ asset('assets/javascript/voitures.js') }}"></script>
-		<script src="{{ asset('assets/javascript/voitures-add.js') }}"></script>
-	{% endblock %}
+{% block contentjs %}
+	<script src="{{ asset('assets/javascript/voitures.js') }}"></script>
+	<script src="{{ asset('assets/javascript/voitures-add.js') }}"></script>
 {% endblock %}
