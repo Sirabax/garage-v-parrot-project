@@ -24,10 +24,11 @@ $prix = isset($_POST['prix']) ? filter_var($_POST['prix'], 520) : '';
 $annee = isset($_POST['annee']) ? filter_var($_POST['annee'], 519) : '';
 $kilometrage = isset($_POST['kilometrage']) ? filter_var($_POST['kilometrage'], 519) : '';
 $couleur = isset($_POST['couleur']) ? filter_var($_POST['couleur'], 513) : '';
+$image = isset($_POST['image']) ? filter_var($_POST['image'], 513) : '';
 
 
 // Prepare and execute the SQL statement to insert a new row into the 'voitures' table
-$sql = "INSERT INTO voitures (marque, modele, prix, annee, kilometrage, couleur) VALUES (?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO voitures (marque, modele, prix, annee, kilometrage, couleur, image) VALUES (?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 
 // Check if the SQL statement preparation was successful
@@ -36,7 +37,7 @@ if (!$stmt) {
 }
 
 // Bind parameters
-$stmt->bind_param("ssdiis", $marque, $modele, $prix, $annee, $kilometrage, $couleur);
+$stmt->bind_param("ssdiiss", $marque, $modele, $prix, $annee, $kilometrage, $couleur, $image);
 
 // Check if binding parameters was successful
 if (!$stmt->execute()) {
