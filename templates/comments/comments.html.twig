@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Vos Avis{% endblock %}
+
 {% block contentcss %}
 	<link href="{{ asset('assets/stylesheets/commentstyle.css') }}" rel="stylesheet"/>
 {% endblock %}
@@ -68,72 +70,9 @@
 		{% endfor %}
 	</div>
 </div>
-<script>
+{% endblock %}
 
-// Add comment
-document.addEventListener('DOMContentLoaded', function () {
-    const commentForm = document.querySelector('#comment-form');
-
-    if (commentForm) {
-        commentForm.addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            const formData = new FormData(commentForm);
-
-            fetch('/add-comment.php', {
-                method: 'POST',
-                body: formData,
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.errors) {
-                    // Handle form errors
-                    alert('Failed to add comment. Please check the form for errors.');
-                    console.log(data.errors); // Log errors to the console for debugging
-                } else {
-                    // Comment added successfully
-                    alert('Comment added successfully.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred while adding the comment.');
-            });
-        });
-    }
-});
-
-
-// Moderation Checkbox
-document.addEventListener('DOMContentLoaded', function () {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    
-    checkboxes.forEach(function (checkbox) {
-        checkbox.addEventListener('change', function () {
-            const isChecked = this.checked ? 1 : 0;
-            const itemId = this.getAttribute('data-item-id');
-
-            const formData = new FormData();
-            formData.append('itemId', itemId);
-            formData.append('isChecked', isChecked);
-
-            // Modify the URL to fetch update-moderation.php from the public directory
-            const updateModerationUrl = '/update-moderation.php';
-
-            // Send an AJAX request to update the database
-            fetch(updateModerationUrl, {
-                method: 'POST',
-                body: formData,
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Moderation status updated successfully.');
-                } else {
-                    alert('Failed to update moderation status.');
-                }
-            });
-        });
-    });
-});
-</script>
+{% block contentjs %}
+	<script src="{{ asset('assets/javascript/moderation-checkbox.js') }}"></script>
+	<script src="{{ asset('assets/javascript/comment-add.js') }}"></script>
 {% endblock %}
