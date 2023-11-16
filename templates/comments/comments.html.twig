@@ -7,7 +7,6 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="container mt-5">
     <form id="comment-form" action="add-comment.php">
         <div class="form-group row">
@@ -21,11 +20,11 @@
             <label for="rating" class="col-sm-2 col-form-label">Rating</label>
             <div class="col-sm-10">
                 <select class="form-control" id="rating" name="rating" required>
-                    <option value="5">5</option>
-                    <option value="4">4</option>
-                    <option value="3">3</option>
-                    <option value="2">2</option>
-                    <option value="1">1</option>
+                    <option value="5">5 - &#11088;&#11088;&#11088;&#11088;&#11088;</option>
+                    <option value="4">4 - &#11088;&#11088;&#11088;&#11088;</option>
+                    <option value="3">3 - &#11088;&#11088;&#11088;</option>
+                    <option value="2">2 - &#11088;&#11088;</option>
+                    <option value="1">1 - &#11088;</option>
                 </select>
             </div>
         </div>
@@ -59,7 +58,7 @@
                     </div>
 					<div class="card-body py-3">
 						<h5 class="card-title">{{ row.name }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{ row.rating }}</h6>
+                        <h6 class="mb-3 stars" data-rating="{{ row.rating }}"></h6>
 						<p class="card-text">{{ row.comment }}</p>
 					</div>
 					<div class="card-footer">
@@ -75,4 +74,5 @@
 {% block contentjs %}
 	<script src="{{ asset('assets/javascript/moderation-checkbox.js') }}"></script>
 	<script src="{{ asset('assets/javascript/comment-add.js') }}"></script>
+	<script src="{{ asset('assets/javascript/stars.js') }}"></script>
 {% endblock %}
