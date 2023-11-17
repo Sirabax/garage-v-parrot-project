@@ -4,9 +4,11 @@ namespace App\Entity;
 
 use App\Repository\UsersAccountRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UsersAccountRepository::class)]
-class UsersAccount
+class UsersAccount implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -27,6 +29,11 @@ class UsersAccount
 
     #[ORM\Column(length: 255)]
     private ?string $type_utilisateur = null;
+
+    public function __construct()
+    {
+        // ... your constructor logic ...
+    }
 
     public function getId(): ?int
     {
@@ -89,6 +96,47 @@ class UsersAccount
     public function setTypeUtilisateur(string $type_utilisateur): static
     {
         $this->type_utilisateur = $type_utilisateur;
+
+        return $this;
+    }
+
+    public function getRoles(): array
+    {
+        $roles = ['ROLE_USER'];
+
+        if ($this->getTypeUtilisateur() === 'administrateur') {
+            $roles[] = 'ROLE_ADMIN';
+        } elseif ($this->getTypeUtilisateur() === 'employe') {
+            $roles[] = 'ROLE_EMPLOYE';
+        }
+
+        return $roles;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->mot_de_passe;
+    }
+
+    public function getSalt()
+    {
+        // You don't need a salt with modern password hashing (bcrypt, argon2)
+        return null;
+    }
+
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, erase it here
+    }
+
+    public function getUserIdentifier(): string
+    {
+        return $this->getEmail();
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->mot_de_passe = $password;
 
         return $this;
     }
