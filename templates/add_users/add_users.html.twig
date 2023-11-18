@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ADMIN{% endblock %}
+
+{% block contentcss %}
+	<link href="{{ asset('assets/stylesheets/.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+{% include 'navbar.html.twig' %}
+
+    <body>
+        <h2>Add User</h2>
+
+        <form action="process_form.php" method="post">
+            <label for="nom">Last Name:</label>
+            <input type="text" name="nom" required>
+            <br>
+
+            <label for="prenom">First Name:</label>
+            <input type="text" name="prenom" required>
+            <br>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+            <br>
+
+            <label for="mot_de_passe">Password:</label>
+            <input type="password" name="mot_de_passe" required>
+            <br>
+
+            <label for="type_utilisateur">User Type:</label>
+            <select name="type_utilisateur" required>
+                <option value="admin">Admin</option>
+                <option value="regular">Regular User</option>
+            </select>
+            <br>
+
+            <input type="submit" value="Add User">
+        </form>
+    </body>
+{% endblock %}
