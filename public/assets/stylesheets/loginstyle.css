@@ -1,0 +1,72 @@
+/* loginstyle.css */
+
+/* Ajoutez une couleur de fond et une bordure aux éléments du formulaire */
+.login-form {
+    background-color: #95ccff;
+    border: 1px solid #007bff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+/* Modifiez les couleurs du texte et des liens */
+.login-form h2 {
+    color: #333;
+}
+
+.login-form label {
+    color: #555;
+}
+
+.login-form a {
+    color: #007bff; /* Bleu pour les liens */
+}
+
+/* Modifiez les couleurs des bordures des champs et du bouton */
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form input[type="submit"] {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+/* Ajoutez une couleur de fond et de texte pour le bouton */
+.login-form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Changez la couleur du texte d'erreur */
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.login-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form .input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.login-form .input-group label {
+    flex: 0 0 100px; /* Largeur fixe pour l'étiquette */
+    margin-right: 10px;
+}
+
+.login-form .input-group input {
+    flex: 1; /* Le champ input prendra tout l'espace restant */
+}
