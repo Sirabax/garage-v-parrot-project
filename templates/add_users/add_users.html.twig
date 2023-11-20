@@ -50,6 +50,29 @@
             return true;
         }
     </script>
+
+            <script>
+            document.getElementById('addUserForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                // Get form data
+                var formData = new FormData(this);
+
+                // Send AJAX request to the Symfony controller
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '{{ path('add_users') }}', true);
+                xhr.onload = function () {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        // Request was successful, handle the response if needed
+                        console.log(xhr.responseText);
+                    } else {
+                        // Request failed
+                        console.error('Request failed:', xhr.statusText);
+                    }
+                };
+                xhr.send(formData);
+            });
+        </script>
 </div>
 
 {% endblock %}
