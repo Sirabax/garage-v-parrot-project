@@ -104,9 +104,9 @@ class UsersAccount implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $roles = ['ROLE_USER'];
 
-        if ($this->getTypeUtilisateur() === 'administrateur') {
+        if ($this->getTypeUtilisateur() === 'Administrateur') {
             $roles[] = 'ROLE_ADMIN';
-        } elseif ($this->getTypeUtilisateur() === 'employe') {
+        } elseif ($this->getTypeUtilisateur() === 'Employe') {
             $roles[] = 'ROLE_EMPLOYE';
         }
 

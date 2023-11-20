@@ -11,9 +11,6 @@ class AddUsersController extends AbstractController
     #[Route("/add_users", name: "add_users")]
     public function index(): Response
     {
-        // Dump roles for debugging
-        dump($this->getUser()->getRoles());
-
         // Check if the user has ROLE_ADMIN
         if (!$this->isGranted('ROLE_ADMIN')) {
             // Redirect to the login page
