@@ -6,6 +6,7 @@ use App\Repository\UsersAccountRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 #[ORM\Entity(repositoryClass: UsersAccountRepository::class)]
 class UsersAccount implements UserInterface, PasswordAuthenticatedUserInterface
@@ -120,13 +121,11 @@ class UsersAccount implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function getSalt()
     {
-        // You don't need a salt with modern password hashing (bcrypt, argon2)
         return null;
     }
 
     public function eraseCredentials()
     {
-        // If you store any temporary, sensitive data on the user, erase it here
     }
 
     public function getUserIdentifier(): string
@@ -134,9 +133,9 @@ class UsersAccount implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->getEmail();
     }
 
-    public function setPassword(string $password): self
+    public function setPassword(string $password, UserPasswordHasherInterface $passwordHasher): self
     {
-        $this->mot_de_passe = $password;
+        $this->mot_de_passe = $passwordHasher->hashPassword($this, $password);
 
         return $this;
     }

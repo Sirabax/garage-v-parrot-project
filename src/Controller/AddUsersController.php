@@ -7,10 +7,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Doctrine\Persistence\ManagerRegistry;
 
 class AddUsersController extends AbstractController
 {
+    private UserPasswordHasherInterface $passwordHasher;
+    private ManagerRegistry $doctrine;
+
+    // Inject UserPasswordHasherInterface and ManagerRegistry into the constructor
+    public function __construct(UserPasswordHasherInterface $passwordHasher, ManagerRegistry $doctrine)
+    {
+        $this->passwordHasher = $passwordHasher;
+        $this->doctrine = $doctrine;
+    }
+
     #[Route("/add_users", name: "add_users")]
     public function index(Request $request): Response
     {
@@ -28,17 +39,19 @@ class AddUsersController extends AbstractController
             $email = $request->request->get('email');
             $motDePasse = $request->request->get('mot_de_passe');
 
+            // Accessing the EntityManager through the ManagerRegistry
+            $entityManager = $this->doctrine->getManager();
+
             // Create a new UsersAccount entity
             $user = new UsersAccount();
             $user
                 ->setNom($nom)
                 ->setPrenom($prenom)
                 ->setEmail($email)
-                ->setMotDePasse($passwordEncoder->encodePassword($user, $motDePasse))
+                ->setMotDePasse($this->passwordHasher->hashPassword($user, $motDePasse))
                 ->setTypeUtilisateur('Employe');
 
             // Persist the entity to the database
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
 
