@@ -11,6 +11,15 @@ class AddUsersController extends AbstractController
     #[Route("/add_users", name: "add_users")]
     public function index(): Response
     {
+        // Dump roles for debugging
+        dump($this->getUser()->getRoles());
+
+        // Check if the user has ROLE_ADMIN
+        if (!$this->isGranted('ROLE_ADMIN')) {
+            // Redirect to the login page
+            return $this->redirectToRoute('app_login');
+        }
+
         return $this->render('add_users/add_users.html.twig', [
             'controller_name' => 'AddUsersController',
         ]);

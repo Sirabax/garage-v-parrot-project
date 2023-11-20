@@ -3,40 +3,53 @@
 {% block title %}ADMIN{% endblock %}
 
 {% block contentcss %}
-	<link href="{{ asset('assets/stylesheets/.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('assets/stylesheets/commentstyle.css') }}" rel="stylesheet"/>
 {% endblock %}
 
 {% block content %}
-{% include 'navbar.html.twig' %}
+    {% include 'navbar.html.twig' %}
 
-    <body>
-        <h2>Add User</h2>
+<div class="container headbar-space">
+    <h2>Add User</h2>
 
-        <form action="process_form.php" method="post">
-            <label for="nom">Last Name:</label>
-            <input type="text" name="nom" required>
-            <br>
+    <form action="" method="post" onsubmit="return validateForm()">
+        <label for="nom">Last Name:</label>
+        <input type="text" name="nom" id="nom" required>
+        <br>
 
-            <label for="prenom">First Name:</label>
-            <input type="text" name="prenom" required>
-            <br>
+        <label for="prenom">First Name:</label>
+        <input type="text" name="prenom" id="prenom" required>
+        <br>
 
-            <label for="email">Email:</label>
-            <input type="email" name="email" required>
-            <br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+        <br>
 
-            <label for="mot_de_passe">Password:</label>
-            <input type="password" name="mot_de_passe" required>
-            <br>
+        <label for="mot_de_passe">Password:</label>
+        <input type="password" name="mot_de_passe" id="mot_de_passe" pattern=".{8,}" title="Le mot de passe doit comporter au moins 8 caractères" required>
+        <br>
 
-            <label for="type_utilisateur">User Type:</label>
-            <select name="type_utilisateur" required>
-                <option value="admin">Admin</option>
-                <option value="regular">Regular User</option>
-            </select>
-            <br>
+        <label for="confirm_passe">Confirm Password:</label>
+        <input type="password" name="confirm_passe" id="confirm_passe" pattern=".{8,}" title="Les mots de passe doivent correspondre et comporter au moins 8 caractères." required>
+        <br>
 
-            <input type="submit" value="Add User">
-        </form>
-    </body>
+        <input type="submit" value="Add User">
+    </form>
+
+    <script>
+        function validateForm() {
+            var password = document.getElementById('mot_de_passe').value;
+            var confirmPassword = document.getElementById('confirm_passe').value;
+
+            if (password !== confirmPassword) {
+                alert('Les mots de passe ne correspondent pas!');
+                return false; // Prevent form submission
+            }
+
+            // Continue with form submission if passwords match
+            return true;
+        }
+    </script>
+</div>
+
 {% endblock %}
