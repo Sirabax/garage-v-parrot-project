@@ -69,9 +69,7 @@
             "@auto-scripts"
         ]
     },
-    "conflict": {
-        "symfony/symfony": "*"
-    },
+    "conflict": {},
     "extra": {
         "symfony": {
             "allow-contrib": false,
