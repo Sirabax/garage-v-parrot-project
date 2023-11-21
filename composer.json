@@ -1,4 +1,6 @@
 {
+    "name": "garage-v-parrot/garage-website",
+    "description": "Site internet pour un garage effectuant des services et la vente de voitures d'occasion.",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
@@ -28,6 +30,7 @@
         "twig/twig": "^3.7"
     },
     "require-dev": {
+        "maglnet/composer-require-checker": "^4.7",
         "symfony/maker-bundle": "^1.50"
     },
     "config": {
@@ -75,5 +78,15 @@
             "allow-contrib": false,
             "require": "6.3.*"
         }
-    }
+    },
+    "authors": [
+        {
+            "name": "Daniel Cohen",
+            "email": "xabaris@email.com"
+        },
+        {
+            "name": "Francesco Paolo Laudicina",
+            "email": "nelo-angelo@hotmail.it"
+        }
+    ]
 }
