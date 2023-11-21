@@ -25,6 +25,7 @@
 
 /* Modifiez les couleurs des bordures des champs et du bouton */
 .login-form input[type="text"],
+.login-form input[type="email"],
 .login-form input[type="password"],
 .login-form input[type="submit"] {
     border: 1px solid #ccc;

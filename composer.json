@@ -36,6 +36,7 @@
     },
     "require-dev": {
         "maglnet/composer-require-checker": "^4.7"
+        "maglnet/composer-require-checker": "^4.7"
     },
     "config": {
         "allow-plugins": {
