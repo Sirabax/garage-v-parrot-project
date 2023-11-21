@@ -11,13 +11,17 @@
         "doctrine/doctrine-bundle": "^2.10",
         "doctrine/doctrine-migrations-bundle": "^3.3",
         "doctrine/orm": "^2.16",
+        "doctrine/persistence": "^3.2",
         "symfony/asset": "6.3.*",
         "symfony/console": "6.3.*",
         "symfony/dotenv": "6.3.*",
         "symfony/flex": "^2",
         "symfony/form": "6.3.*",
         "symfony/framework-bundle": "6.3.*",
+        "symfony/http-foundation": "6.3.*",
+        "symfony/http-kernel": "6.3.*",
         "symfony/monolog-bundle": "^3.10",
+        "symfony/password-hasher": "6.3.*",
         "symfony/runtime": "6.3.*",
         "symfony/security-bundle": "6.3.*",
         "symfony/security-core": "6.3.*",
@@ -28,6 +32,7 @@
         "twig/twig": "^3.7"
     },
     "require-dev": {
+        "maglnet/composer-require-checker": "^4.7",
         "symfony/maker-bundle": "^1.50"
     },
     "config": {
