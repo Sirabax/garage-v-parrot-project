@@ -35,7 +35,8 @@
         "twig/twig": "^3.7"
     },
     "require-dev": {
-        "maglnet/composer-require-checker": "^4.7"
+        "maglnet/composer-require-checker": "^4.7",
+        "symfony/debug-bundle": "^6.3"
     },
     "config": {
         "allow-plugins": {
