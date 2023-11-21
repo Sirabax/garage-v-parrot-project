@@ -3,21 +3,22 @@
 {% block title %}ADMIN{% endblock %}
 
 {% block contentcss %}
-    <link href="{{ asset('assets/stylesheets/commentstyle.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('assets/stylesheets/loginstyle.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('assets/stylesheets/adduserstyle.css') }}" rel="stylesheet"/>
 {% endblock %}
 
 {% block content %}
     {% include 'navbar.html.twig' %}
 
-<div class="container headbar-space">
-    <h2>Add User</h2>
+<div class="container headbar-space login-form">
+    <h2>Ajouter employé</h2>
 
     <form action="" method="post" id="addUserForm">
-        <label for="nom">Last Name:</label>
+        <label for="nom">Nom:</label>
         <input type="text" name="nom" id="nom" required>
         <br>
 
-        <label for="prenom">First Name:</label>
+        <label for="prenom">Prenom:</label>
         <input type="text" name="prenom" id="prenom" required>
         <br>
 
@@ -25,15 +26,15 @@
         <input type="email" name="email" id="email" required>
         <br>
 
-        <label for="mot_de_passe">Password:</label>
+        <label for="mot_de_passe">Mot de passe:</label>
         <input type="password" name="mot_de_passe" id="mot_de_passe" pattern=".{8,}" title="Le mot de passe doit comporter au moins 8 caractères" required>
         <br>
 
-        <label for="confirm_passe">Confirm Password:</label>
+        <label for="confirm_passe">Confirmer mot de passe:</label>
         <input type="password" name="confirm_passe" id="confirm_passe" pattern=".{8,}" title="Les mots de passe doivent correspondre et comporter au moins 8 caractères." required>
         <br>
 
-        <input type="submit" value="Add User">
+        <input type="submit" value="Ajoute employé">
     </form>
 </div>
 
