@@ -10,9 +10,9 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/dbal": "^3.7",
-        "doctrine/doctrine-bundle": "^2.10",
+        "doctrine/doctrine-bundle": "^2.11",
         "doctrine/doctrine-migrations-bundle": "^3.3",
-        "doctrine/orm": "^2.16",
+        "doctrine/orm": "^2.17",
         "doctrine/persistence": "^3.2",
         "symfony/asset": "^6.3",
         "symfony/console": "^6.3",
@@ -22,6 +22,7 @@
         "symfony/framework-bundle": "^6.3",
         "symfony/http-foundation": "^6.3",
         "symfony/http-kernel": "^6.3",
+        "symfony/maker-bundle": "^1.51",
         "symfony/monolog-bundle": "^3.10",
         "symfony/password-hasher": "^6.3",
         "symfony/runtime": "^6.3",
@@ -34,8 +35,7 @@
         "twig/twig": "^3.7"
     },
     "require-dev": {
-        "maglnet/composer-require-checker": "^4.7",
-        "symfony/maker-bundle": "^1.50"
+        "maglnet/composer-require-checker": "^4.7"
     },
     "config": {
         "allow-plugins": {
